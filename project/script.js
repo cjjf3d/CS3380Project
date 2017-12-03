@@ -5,7 +5,7 @@ $(function() {
     $("#image1").attr("src",imgsrc1[0] );
     i = 0;
     function switchImage() {
-        setTimeout(switchImage, 10000);
+        setTimeout(switchImage, 9750);
         
         i++;
         if (i == imgsrc1.length) {
@@ -24,7 +24,7 @@ $(function() {
     $("#image2").attr("src",imgsrc2[0] );
     i = 0;
     function switchImage(){
-        setTimeout(switchImage, 10000);
+        setTimeout(switchImage, 10500);
         
         i++;
         if (i == imgsrc2.length) {

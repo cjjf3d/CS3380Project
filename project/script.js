@@ -1,4 +1,5 @@
 
+// rotates right image carosel
 $(function() {
     imgsrc1 = ["images/pic1.jpg", "images/pic4.jpg", "images/pic6.jpg"];
 
@@ -18,6 +19,7 @@ $(function() {
         switchImage();
 })
 
+// bottom image carosel
 $(function() {
     imgsrc2 = ["images/pic2.jpg", "images/pic5.jpg", "images/pic3.jpg"];
 
@@ -36,3 +38,4 @@ $(function() {
     }
         switchImage();
 })
+

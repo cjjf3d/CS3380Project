@@ -41,8 +41,8 @@ $(function() {
 
 $(function() {
     $.get("songs.php").then(function(result) {
-        fill_table(result, "playTables");
-
+       	create_table(JSON.parse(result), "playTables");
+        alert("DONE");
     }, function(err) {
         alert("ERROR");
     })
@@ -52,8 +52,29 @@ $(function() {
 
 )
 
-
-function fill_table(data, id) {
-    $("#" + id).append("<table>")
-    
-}
+/*
+ * Pass in an array of objects, and the ID of a TABLE, and this function will fill the table with the data
+ */
+function create_table(data, id) {
+	var e = "";
+	var headers = data[0];	
+	var k = Object.keys(headers);
+	e += "<tr>"
+	$.each(k, function(h, j) {
+		e += "<th>" + j + "</th>";
+	})
+	e += "</tr>";
+console.log(data);
+	$.each(data, function(i, d) {
+		e += "<tr>";
+		console.log(d)
+		var v = Object.values(d);
+		console.log(v.length);
+		$.each(v, function(h,j) {
+            		e += "<td>" + j + "</td>";
+			console.log(j);
+       		 })
+		e += "</tr>";
+	})
+	$("#" + id).html(e);
+}	

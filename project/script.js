@@ -39,3 +39,15 @@ $(function() {
         switchImage();
 })
 
+$(function() {
+    $.get("songs.php").then(function(result) {
+        console.log(result.data);
+        alert("DONE");
+    }, function(err) {
+        alert("ERROR");
+    })
+
+
+}
+
+)

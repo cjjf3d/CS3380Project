@@ -1,0 +1,134 @@
+body{
+    background: green;
+}
+
+
+#controlBar {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 100px;
+    width: 100%;
+    background-color: slategray;
+    z-index: 0;
+}
+
+audio {
+    
+    position: center;
+    margin-top: 10px;
+    width: 70%;   
+}
+img{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    bottom: 100px; 
+    left: 0px;
+}
+#info{
+    float: left;
+    border:solid;
+    border-color:slategray;
+    height: 95%;
+    width: 195px;
+    z-index: 10; 
+}
+
+#playTables{
+    position: absolute;
+    left: 199px;
+    top: 5%;
+    width: 70%;
+    height: 60%;
+    border:solid;
+    border-color:green;
+}
+
+#playlists{
+    border:solid;
+    border-color:green;
+    background: grey;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 195px;
+    height: 58.5%;
+}
+
+#name{
+    border: solid goldenrod;
+    top: 0px;
+    background: goldenrod;
+}
+
+#ads1{
+    position:absolute;
+    right: 0%;
+    height: 86%;
+    top: 0%;
+    width: 16.5%;
+    border:solid;
+    border-color:green;
+}
+
+#ads2{
+    position: absolute;
+    left: 199px;
+    top: 65.5%;
+    width: 70%;
+    height: 20.5%;
+    border:solid;
+    border-color:green;  
+}
+
+#image2{
+    position: absolute;
+    left: 0%;
+    bottom: 0%;
+    width: 100%;
+    height: 100%;
+
+}
+
+#image1{
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+
+}
+
+#utility{
+    position: absolute;
+    left: 199px;
+    top: 0%;
+    width: 70%;
+    height: 5%;
+    border:solid;
+    border-color:slategrey;
+    background: slategray;
+}
+
+#login{
+    position: absolute;
+    left: 10%;
+    top: 15%;
+}
+
+input[type=text]{
+    width: 130px;
+    font-size: 16px;
+    background-color: white;
+    -webkit-transition: width 1s ease-in-out;
+    transition: width 1s ease-in-out;
+    position: absolute;
+    left: 60%;
+    top: 15%;
+}
+
+input[type=text]:focus{
+    width: 40%;
+}
+

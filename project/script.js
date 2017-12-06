@@ -63,7 +63,9 @@ function create_table(data, id) {
 	e += "</tr>";
 	$.each(data, function(d) {
 		e += "<tr>";
-		
+		$.each(Object.values(d), function(h,j) {
+            e += "<td>" + j + "</td>";
+        })
 		e += "</tr>";
 	})
 	$("#" + id).html(e);

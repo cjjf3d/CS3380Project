@@ -41,8 +41,8 @@ $(function() {
 
 $(function() {
     $.get("songs.php").then(function(result) {
-        console.log(result.data);
-        alert("DONE");
+        fill_table(result, "playTables");
+
     }, function(err) {
         alert("ERROR");
     })
@@ -51,3 +51,9 @@ $(function() {
 }
 
 )
+
+
+function fill_table(data, id) {
+    $("#" + id).append("<table>")
+    
+}

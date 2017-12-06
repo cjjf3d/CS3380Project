@@ -1,5 +1,5 @@
 <?php
-$a = array("hello", "from", "the", "otter", "slide");
+$a = array("title" => "Hello from the otter slide", "artist" => "Fake excuse for artist");
 echo json_encode($a);
 
 

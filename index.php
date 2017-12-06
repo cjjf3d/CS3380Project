@@ -79,5 +79,5 @@
 	}
 
 
-	//needs delete user function, update playlist, current functions need refining/rewriting
+	//needs delete/add user function, update playlist, current functions need refining/rewriting
 ?>

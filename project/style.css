@@ -42,7 +42,7 @@ img{
     width: 70%;
     height: 60%;
     border:solid;
-    border-color:green;
+    border-color:grey;
 }
 
 #playlists{
@@ -113,11 +113,21 @@ img{
 
 #login{
     position: absolute;
-    left: 10%;
+    left: 0%;
+    top: 15%;
+}
+#username{
+    position: absolute;
+    left: 5%;
+    top: 15%;
+}
+#password{
+    position: absolute;
+    left: 20%;
     top: 15%;
 }
 
-input[type=text]{
+input[name=search]{
     width: 130px;
     font-size: 16px;
     background-color: white;
@@ -128,7 +138,7 @@ input[type=text]{
     top: 15%;
 }
 
-input[type=text]:focus{
+input[name=search]:focus{
     width: 40%;
 }
 

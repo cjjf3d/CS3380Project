@@ -78,3 +78,17 @@ console.log(data);
 	})
 	$("#" + id).html(e);
 }	
+
+$(function(){
+    $('#login').click(function(){
+        $.post('process.php', 
+        {
+            action: 'login',
+            username: $('#username').val(),
+            password: $('#password').val()
+        },
+        function(data){
+            $('#stage').html(data);
+        });
+    })
+});

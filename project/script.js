@@ -41,16 +41,23 @@ $(function() {
 
 $(function() {
     $.get("songs.php").then(function(result) {
-       	create_table(JSON.parse(result), "playTables");
+       	create_table(JSON.parse(result), "playTable");
         alert("DONE");
     }, function(err) {
-        alert("ERROR");
+        alert("ERROR");        
+        <tr>\
+        <th>hi</th>\
+        <th>hi</th>\
+    </tr>
+    <tr>\
+        <td>hi</td>\
+        <td>hi</td>\
+    </tr>  
     })
-
-
 }
 
 )
+//add for playlist table 
 
 /*
  * Pass in an array of objects, and the ID of a TABLE, and this function will fill the table with the data

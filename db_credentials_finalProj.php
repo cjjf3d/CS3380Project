@@ -1,6 +1,6 @@
 <?php
-$servername = "server_name_goes_here";
-$username = "user_name_goes_here";
+$servername = "sql309.epizy.com";
+$username = "epiz_20706845";
 $password = "password_goes_here";
 $dbname = "epiz_20706845_users";
 ?>

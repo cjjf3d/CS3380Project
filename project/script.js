@@ -52,20 +52,28 @@ $(function() {
 
 )
 
+/*
+ * Pass in an array of objects, and the ID of a TABLE, and this function will fill the table with the data
+ */
 function create_table(data, id) {
 	var e = "";
-	var d = data[0];	
-	var k = Object.keys(d);
+	var headers = data[0];	
+	var k = Object.keys(headers);
 	e += "<tr>"
 	$.each(k, function(h, j) {
 		e += "<th>" + j + "</th>";
 	})
 	e += "</tr>";
-	$.each(data, function(d) {
+console.log(data);
+	$.each(data, function(i, d) {
 		e += "<tr>";
-		$.each(Object.values(d), function(h,j) {
-            e += "<td>" + j + "</td>";
-        })
+		console.log(d)
+		var v = Object.values(d);
+		console.log(v.length);
+		$.each(v, function(h,j) {
+            		e += "<td>" + j + "</td>";
+			console.log(j);
+       		 })
 		e += "</tr>";
 	})
 	$("#" + id).html(e);

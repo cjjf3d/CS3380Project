@@ -41,7 +41,7 @@ $(function() {
 
 $(function() {
     $.get("songs.php").then(function(result) {
-        console.log(result.data);
+       	create_table(JSON.parse(result), "playTables");
         alert("DONE");
     }, function(err) {
         alert("ERROR");
@@ -51,3 +51,20 @@ $(function() {
 }
 
 )
+
+function create_table(data, id) {
+	var e = "";
+	var d = data[0];	
+	var k = Object.keys(d);
+	e += "<tr>"
+	$.each(k, function(h, j) {
+		e += "<th>" + j + "</th>";
+	})
+	e += "</tr>";
+	$.each(data, function(d) {
+		e += "<tr>";
+		
+		e += "</tr>";
+	})
+	$("#" + id).html(e);
+}	

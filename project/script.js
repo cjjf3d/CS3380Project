@@ -80,7 +80,7 @@ console.log(data);
 
 $(function(){
     $('#login').click(function(){
-        $.post('process.php', 
+        $.post('index.php', 
         {
             action: 'login',
             username: $('#username').val(),

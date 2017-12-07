@@ -45,9 +45,12 @@ img{
     border-color:grey;
 }
 
+tr{
+    background: red;
+}
 #playlists{
     border:solid;
-    border-color:green;
+    border-color:grey;
     background: grey;
     position: absolute;
     left: 0px;

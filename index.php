@@ -78,6 +78,28 @@
 		return $message;
 	}
 
-
+function login(){
+	$action = empty($_POST['action']) ? false : $_POST['action'];
+	
+	switch ($action) {
+		case 'login':
+			$username = empty($_POST['username']) ? '' : $_POST['username'];
+			$password = empty($_POST['password']) ? '' : $_POST['password'];
+			require('db_credentials.php');
+			$mysqli = new mysqli($servername, $username, $password, $dbname);
+			if ($mysqli->connect_error) {
+				$message = $mysqli->connect_error;
+			} else {
+				$u = "SELECT FROM USERS WHERE UserName = $username AND Password = $password";
+				if($result = $mysql->(query($u))){
+				setcookie('userid', $username);
+				$response = 'Login: Sucess';
+			}
+			else {
+				$response = 'Login: Fail';
+			}
+			print $response;
+			break;	
+}
 	//needs delete/add user function, update playlist, current functions need refining/rewriting
 ?>

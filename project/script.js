@@ -42,17 +42,9 @@ $(function() {
 $(function() {
     $.get("songs.php").then(function(result) {
        	create_table(JSON.parse(result), "playTable");
-        alert("DONE");
     }, function(err) {
         alert("ERROR");        
-        <tr>\
-        <th>hi</th>\
-        <th>hi</th>\
-    </tr>
-    <tr>\
-        <td>hi</td>\
-        <td>hi</td>\
-    </tr>  
+          
     })
 }
 

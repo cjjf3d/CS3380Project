@@ -1,6 +1,6 @@
 <?php
-$servername = "sql309.epizy.com";
-$username = "epiz_20706845";
-$password = "2Kz8Fgdjxs";
-$dbname = "epiz_20706845_users";
+$servername = "ec2-18-216-30-147.us-east-2.compute.amazonaws.com";
+$username = "webuser";
+$password = "cjjf3d1997";
+$dbname = "Project";
 ?>

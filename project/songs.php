@@ -1,6 +1,6 @@
 <?php
 
-require('db_credentials-finalProj.php');
+require('db_credentials_finalProj.php');
 		$mysqli = new mysqli($servername, $username, $password, $dbname) or die("Can't connect");
 
         $a = $mysqli->query("Select * from Song");

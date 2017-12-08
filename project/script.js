@@ -81,7 +81,7 @@ function create_table(data, id) {
 }
 
 function createArray() {
-    var p = Promise();
+    var p = new Promise();
     $.get("songs.php").then(function (result) {
         data = JSON.parse(result);
         var f = [];

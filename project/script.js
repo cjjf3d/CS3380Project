@@ -79,24 +79,37 @@ function create_table(data, id) {
 	$("#" + id).html(e);
 }	
 
-function createArray(data){
-	var headers = data[0];	
-    var k = Object.keys(headers);   
-        console.log(data);
-        $.each(data,function(i,d){
-            console.log(d);
-            var a,b = 0;
-            var m = muscic[a][b];
-            var v = Object.values(d);
-            console.log(v.length);
-            $.each(v,function(h,j){
-                music[a][b] = j;
-                console.log(j);
-                b++; 
-            })
-        a++;
-        })
-}
+// function(){
+//     songs = createArray();
+
+// }
+
+
+// function createArray(){
+//     $.get("songs.php").then(function(result) {
+//         data = JSON.parse(result);
+//     }, function(err) {
+//         alert("ERROR");        
+          
+//     })
+    
+//     var headers = data[0];	
+//     var k = Object.keys(headers);   
+//         console.log(data);
+//         $.each(data,function(i,d){
+//             console.log(d);
+//             var a,b = 0;
+//             var m = muscic[a][b];
+//             var v = Object.values(d);
+//             console.log(v.length);
+//             $.each(v,function(h,j){
+//                 music[a][b] = j;
+//                 console.log(j);
+//                 b++; 
+//             })
+//         a++;
+//         })
+// }
 
 
 $(function(){
@@ -111,4 +124,12 @@ $(function(){
             $('#stage').html(data);
         });
     })
+});
+
+$(document).ready(function(){
+    $('input.search').typeahead({
+        name: 'search',
+        remote:'search.php?key=%QUERY',
+        limit : 10
+    });
 });

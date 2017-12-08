@@ -80,8 +80,7 @@ function create_table(data, id) {
     $("#" + id).html(e);
 }
 
-function createArray() {
-    var p = new Promise();
+var createArray = new Promise(function(resolve, reject) {
     $.get("songs.php").then(function (result) {
         data = JSON.parse(result);
         var f = [];
@@ -89,14 +88,13 @@ function createArray() {
             f.push(b.FilePath);
         });
 
-        p.resolve(f);
+        resolve(f);
 
     }, function (err) {
         alert("ERROR");
-        p.reject(err);
+        reject(err);
     });
-    return p;
-};
+});
 
 $(function () {
 

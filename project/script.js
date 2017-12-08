@@ -65,15 +65,11 @@ function create_table(data, id) {
         e += "<th>" + j + "</th>";
     })
     e += "</tr>";
-    console.log(data);
     $.each(data, function (i, d) {
         e += "<tr>";
-        console.log(d)
         var v = Object.values(d);
-        console.log(v.length);
         $.each(v, function (h, j) {
             e += "<td>" + j + "</td>";
-            console.log(j);
         })
         e += "</tr>";
     })
@@ -97,25 +93,31 @@ var createArray = new Promise(function(resolve, reject) {
 });
 
 $(function () {
-
-    createArray().then(function (playlist) {
-        var audio = new Audio(),
+	$("#play1").click(function(e) {
+		e.preventDefault();
+		
+    createArray.then(function (playlist) {
+        var audio = document.getElementById("music_audio");
             i = 0;
-        audio.addEventListener('ended', function () {
+/*        audio.addEventListener('ended', function () {
             i = ++i < playlist.length ? i : 0;
-            console.log(i);
             audio.src = playlist[i];
+	    audio.load();
             audio.play();
         }, true);
-        audio.loop = false;
-        audio.src = playlist[0];
-        audio.play();
+        audio.loop = false;*/
+	var source = document.getElementById("music_source");
+	source.src = playlist[0];
+	audio.load();
+	audio.play();
 
     })
-
-
-
+	})
 })
+
+
+
+
 
 $(function () {
     $('#login').click(function () {

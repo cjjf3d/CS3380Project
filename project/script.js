@@ -79,37 +79,34 @@ function create_table(data, id) {
 	$("#" + id).html(e);
 }	
 
-// function(){
-//     songs = createArray();
+function createArray(){
 
-// }
+    $.get("songs.php").then(function(result) {
+        data = JSON.parse(result);
+        var f = [];
+        data.forEach(function(b){
+            f.push(b.FilePath);
+        });
 
+        }, function(err) {
+            alert("ERROR");              
+    });
+};
 
-// function createArray(){
-//     $.get("songs.php").then(function(result) {
-//         data = JSON.parse(result);
-//     }, function(err) {
-//         alert("ERROR");        
-          
-//     })
-    
-//     var headers = data[0];	
-//     var k = Object.keys(headers);   
-//         console.log(data);
-//         $.each(data,function(i,d){
-//             console.log(d);
-//             var a,b = 0;
-//             var m = muscic[a];
-//             var v = Object.values(d);
-//             console.log(v.length);
-//             $.each(v,function(h,j){
-//                 music[a] = j;
-//                 console.log(j);
-//             })
-//         a++;
-//         })
-// }
-
+function(){
+var audio = new Audio(),
+i = 0;
+var playlist = createArray(); 
+audio.addEventListener('ended', function () {
+i = ++i < playlist.length ? i : 0;
+console.log(i)
+audio.src = playlist[i];
+audio.play();
+}, true);
+audio.loop = false;
+audio.src = playlist[0];
+audio.play();
+}
 
 $(function(){
     $('#login').click(function(){

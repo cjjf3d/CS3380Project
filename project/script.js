@@ -76,7 +76,7 @@ function create_table(data, id) {
     $("#" + id).html(e);
 }
 
-var createArray = new Promise(function(resolve, reject) {
+var createArray = new Promise(function (resolve, reject) {
     $.get("songs.php").then(function (result) {
         data = JSON.parse(result);
         var f = [];
@@ -93,26 +93,26 @@ var createArray = new Promise(function(resolve, reject) {
 });
 
 $(function () {
-	$("#play1").click(function(e) {
-		e.preventDefault();
-		
-    createArray.then(function (playlist) {
-        var audio = document.getElementById("music_audio");
-            i = 0;
-/*        audio.addEventListener('ended', function () {
-            i = ++i < playlist.length ? i : 0;
-            audio.src = playlist[i];
-	    audio.load();
-            audio.play();
-        }, true);
-        audio.loop = false;*/
-	var source = document.getElementById("music_source");
-	source.src = playlist[0];
-	audio.load();
-	audio.play();
+    $("#play1").click(function (e) {
+        e.preventDefault();
 
+        createArray.then(function (playlist) {
+            var audio = document.getElementById("music_audio");
+            i = 0;
+            var source = document.getElementById("music_source");
+            audio.addEventListener('ended', function () {
+                i = ++i < playlist.length ? i : 0;
+                source.src = playlist[i];
+                audio.load();
+                audio.play();
+            }, true);
+            audio.loop = false;
+            source.src = playlist[0];
+            audio.load();
+            audio.play();
+
+        })
     })
-	})
 })
 
 

@@ -99,13 +99,12 @@ function create_table(data, id) {
 //         $.each(data,function(i,d){
 //             console.log(d);
 //             var a,b = 0;
-//             var m = muscic[a][b];
+//             var m = muscic[a];
 //             var v = Object.values(d);
 //             console.log(v.length);
 //             $.each(v,function(h,j){
-//                 music[a][b] = j;
+//                 music[a] = j;
 //                 console.log(j);
-//                 b++; 
 //             })
 //         a++;
 //         })
@@ -121,7 +120,7 @@ $(function(){
             password: $('#password').val()
         },
         function(data){
-            $('#stage').html(data);
+            $('#utility').html(data);
         });
     })
 });

@@ -1,25 +1,21 @@
 <?php
+
+if(isset($_POST["login"])) {
 require('db_credentials_finalProj.php');
 $mysqli = new mysqli($servername, $username, $password, $dbname) or die("Can't connect");
-$result = $mysqli->query("INSERT INTO Users(UserName, Password) VALUES ('" . $_POST["username"] . "', '" . $_POST["password"] . "')");
-if ($result->affected_rows > 0) {
-    // echo "<h3 style='margin:auto;'>Account Created!</h3>";
-    echo "<meta http-equiv='refresh' content='3; url=index.php'>"
+$mysqli->query("INSERT INTO Users(UserName, Password) VALUES ('" . $_POST["username"] . "', '" . $_POST["password"] . "')");
+if($mysqli -> affected_rows > 0){ ?>
+Account Creation Successful!
+<br>
+Redirecting....
+<meta http-equiv="refresh" content="3;url=index.php" />
+<?php }
+else{
+echo "Username already exists";
 }
-else {
-
 }
 ?>
-<style>
-    body{
-        background: green;
-    }
-    form{
-        position: absolute;
-        top: 50%;
-    }
-        
-</style>
+
 <html>
 
 <body>

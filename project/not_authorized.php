@@ -22,15 +22,6 @@ if(isset($_POST["login"])) {
     }
 }
 ?>
-<style>
-    body{background: green;
-    }
-    form{
-        position: absolute;
-        top: 50%;
-    }
-
-</style>
 
 <html>
 <body>

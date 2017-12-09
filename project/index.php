@@ -1,3 +1,13 @@
+<?php
+if (session_status() != PHP_SESSION_ACTIVE) {
+    session_start();
+}
+
+if (!isset($_SESSION["user"])) {
+    header("Location: not_authorized.php")
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <html>
@@ -18,10 +28,10 @@
 
 <body>
     <!-- Section handleing audio -->
-    <div id= "controlBar">
+    <div id="controlBar">
         <!-- audio tag is used for playing of songs - songs are to be given to it by a javascript array 
             that represents the current playlist -->
-        <audio controls= "controls" id="music_audio">
+        <audio controls="controls" id="music_audio">
             <source id="music_source" type="audio/mpeg" />
         </audio>
 

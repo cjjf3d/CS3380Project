@@ -4,7 +4,7 @@ if (session_status() != PHP_SESSION_ACTIVE) {
 }
 
 if (!isset($_SESSION["user"])) {
-    header("Location: not_authorized.php")
+    header("Location: not_authorized.php");
 }
 ?>
 
@@ -65,10 +65,7 @@ if (!isset($_SESSION["user"])) {
         <form>
             <input type="text" name="search" placeholder="Search..">
         </form>
-
-        <input type="text" id="username" placeholder="username">
-        <input type="password" id="password" placeholder="password">
-        <button id="login">Login</button>
+	<button onclick='window.location = "logout.php"'>Logout</button>
     </div>
 
     <!-- section handling rotating image gallery makes no sense in terms of project but is required-->

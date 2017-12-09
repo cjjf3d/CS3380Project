@@ -2,12 +2,8 @@
 require('db_credentials_finalProj.php');
 $mysqli = new mysqli($servername, $username, $password, $dbname) or die("Can't connect");
 $result = $mysqli->query("INSERT INTO Users(UserName, Password) VALUES ('" . $_POST["username"] . "', '" . $_POST["password"] . "')");
-if ($result->affected_rows > 0) {
+
 	header("Location: index.php");
-}
-else {
-	
-}
 ?>
 
 <html>

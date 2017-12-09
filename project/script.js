@@ -93,26 +93,29 @@ var createArray = new Promise(function (resolve, reject) {
 });
 
 $(function () {
-    $("#play1").click(function (e) {
-        e.preventDefault();
 
         createArray.then(function (playlist) {
+	    console.log(playlist);
             var audio = document.getElementById("music_audio");
-            i = 0;
+            var i = 0;
             var source = document.getElementById("music_source");
             audio.addEventListener('ended', function () {
-                i = ++i < playlist.length ? i : 0;
+                i++;
+		if (i == playlist.length) {
+			i = 0;
+		}
                 source.src = playlist[i];
+		alert(playlist[i]);
+		console.log("i=" + i);
                 audio.load();
                 audio.play();
             }, true);
             audio.loop = false;
             source.src = playlist[0];
             audio.load();
-            audio.play();
+//            audio.play();
 
         })
-    })
 })
 
 

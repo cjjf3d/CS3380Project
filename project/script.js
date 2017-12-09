@@ -94,28 +94,28 @@ var createArray = new Promise(function (resolve, reject) {
 
 $(function () {
 
-        createArray.then(function (playlist) {
-	    console.log(playlist);
-            var audio = document.getElementById("music_audio");
-            var i = 0;
-            var source = document.getElementById("music_source");
-            audio.addEventListener('ended', function () {
-                i++;
-		if (i == playlist.length) {
-			i = 0;
-		}
-                source.src = playlist[i];
-		alert(playlist[i]);
-		console.log("i=" + i);
-                audio.load();
-                audio.play();
-            }, true);
-            audio.loop = false;
-            source.src = playlist[0];
+    createArray.then(function (playlist) {
+        console.log(playlist);
+        var audio = document.getElementById("music_audio");
+        var i = 0;
+        var source = document.getElementById("music_source");
+        audio.addEventListener('ended', function () {
+            i++;
+            if (i == playlist.length) {
+                i = 0;
+            }
+            source.src = playlist[i];
+            alert(playlist[i]);
+            console.log("i=" + i);
             audio.load();
-//            audio.play();
+            audio.play();
+        }, true);
+        audio.loop = false;
+        source.src = playlist[0];
+        audio.load();
+        //            audio.play();
 
-        })
+    })
 })
 
 
